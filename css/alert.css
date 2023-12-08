@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(120deg, #B2DFDB, #80CBC4, #4DB6AC);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    animation: fade 3s ease-in-out;
+    
+}
+
+#layout { 
+    color:transparent;
+    height:600px;
+    width:100%;
+    height:100%; 
+  }
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: rgba(0, 0, 0, 0.836);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    animation: fade 3s ease-in-out;
+    color: #fff;
+}
+
+canvas {
+    position:absolute;
+    top:0;
+    left:0
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 4em;
+    color: white;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+p {
+    color: white;
+    font-size: 1.5em;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    width: 70%;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.6); /* Darker background for the quote container */
+    color: white; /* Light text for better readability */
+}
+
+.stars {
+    z-index: 0;
+    position: absolute;
+    background-image: url(   https://www.manufosela.es/shooting_stars/hori.png), url( https://www.manufosela.es/shooting_stars/stars_5.png);
+    background-repeat: repeat-x, repeat-x repeat-y;
+    transform:translate3D(0em, 0em, 0);
+    animation: stars 21s ease; 
+    transform-style: preserve-3d;
+  }
+
+.bubble {
+    animation: bubbleUp 2s ease-in-out infinite;
+}
+
+@keyframes bubbleUp {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Icon Styling */
+.fas {
+    color: #FFF8DC; /* A soft color that matches the theme */
+    margin: 0 10px;
+}
+
+/* Additional Styling for Icons */
+.fa-leaf, .fa-book-open, .fa-music {
+    font-size: 2em;
+    display: block;
+    margin: 20px auto;
+    background: rgba(163, 75, 75, 0.9);
+}
+
+/* Icon Styling */
+.fas {
+    color: #FFF8DC; /* A soft color that matches the theme */
+    margin: 0 10px;
+}
+
+/* Additional Styling for Icons */
+.fa-leaf, .fa-book-open, .fa-music {
+    font-size: 2em;
+    display: block;
+    margin: 20px auto;
+    color: #FFF8DC;
+}
+
+/* Other styles remain the same */
+
+/* New action-buttons container */
+.action-buttons {
+    text-align: center;
+    position: fixed; /* or absolute, depending on your layout needs */
+    bottom: 20px; /* Adjust as necessary */
+    left: 0;
+    right: 0;
+    z-index: 2; /* Make sure it's above the stars and twinkling layers */
+}
+
+/* Styling for the buttons */
+#takeBreakButton, #skipBreakButton {
+    background: transparent;
+    color: #FFF;
+    border: 1px solid #FFF;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#takeBreakButton:hover, #skipBreakButton:hover {
+    border-color: #4DB6AC;
+    background-color: #FFF; /* White background for contrast */
+    color: #88bdbc; /* Color that stands out against the white */
+}
+
+/* Ensure the buttons don't overlap the content on smaller screens */
+@media (max-height: 500px) {
+    .action-buttons {
+        position: static; /* Stack the buttons below the container */
+        margin-top: 20px;
+    }
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

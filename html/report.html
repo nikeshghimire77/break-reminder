@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/report.css">
+    <script src="/js/report.js" defer></script>
+    <script src="/js/chart.js"></script>
+    <title>Activity Report</title>
+</head>
+<body>
+    <div class="report-box">
+        <h2>Break Reminder Activity Report</h2>
+        <div class="report-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hour</th>
+                        <th>Total Breaks Taken</th>
+                        <th>Break Skipped</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic rows will be added here by the script -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Bar Chart Container -->
+    <div class="chart-container bar-chart-container">
+        <h1>Hourly Breaks (Bar Chart)</h1>
+        <canvas id="breakBarChart"></canvas>
+    </div>
+
+    <!-- Popup Structure -->
+    <div id="popup" class="popup" style="display:none;">
+        <!-- Popup content will be dynamically added here -->
+        <span class="close-btn" onclick="closePopup()">×</span>
+    </div>
+
+    <a href="/html/popup.html" class="back-button">Back to Reminder</a>
+
+    <!-- Ensure the report.js script includes the popup logic -->
+    <script src="/js/report.js" defer></script>
+</body>
+</html>

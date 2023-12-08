@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif; /* Using Open Sans */
+  background: #000000; /* Single flat color background */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.report-box {
+  width: 1000px; /* Fixed width, you can adjust as needed */
+  margin: 20px; /* Space from the top of the viewport */
+  padding: 40px 80px; /* Increased padding */
+  background: rgba(255, 255, 255, 0.05); /* Semi-transparent white for card effect */
+  border-radius: 10px;
+  backdrop-filter: blur(10px); /* Soften the background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  color: #fff; /* White text color for contrast */
+}
+
+h2 {
+  font-weight: bold;
+  margin: 0 0 20px; /* Adjusted bottom margin */
+  padding: 0;
+  text-align: center;
+  font-family: 'Pacifico', cursive; /* Using Pacifico for headings */
+  color: #03e9f4; /* Bright blue color for a nice contrast */
+  font-size: 40px; /* Adjust the font size to your preference */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px; /* Space below the table */
+}
+
+th, td {
+  padding: 15px 20px; /* Increased padding for better readability */
+  text-align: center;
+  background-color: rgba(53, 70, 231, 0.2);
+  border-bottom: 1px solid rgb(219, 219, 219);
+  color: #fff;
+}
+
+th {
+  background-color: rgba(53, 70, 231, 0.6); /* Even slightly lighter for the header cells */
+  color: #fff;
+  text-transform: uppercase;
+}
+
+tbody tr:hover {
+  background-color: rgba(53, 70, 231, 0.4); /* Lighter shade when hovering over a row */
+}
+
+@media all and (max-width: 767px) {
+  .report-box {
+    padding: 20px; /* Reduced padding on smaller screens */
+    margin: 20px; /* Space from the viewport edges */
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block; /* Stack the table rows vertically */
+  }
+
+  th {
+    position: absolute; /* Hide the header row */
+    top: -9999px;
+    left: -9999px;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%; /* Space for the labels */
+    text-align: right;
+    background-color: rgba(255, 32, 32, 0.3); 
+  }
+
+  td:before {
+    content: attr(data-label); /* Use the data-label for content */
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    color: #03e9f4; /* Blue color for labels */
+  }
+}
+
+.back-button {
+  font-weight: bold;
+  display: inline-block;
+  padding: 15px 25px; /* Slightly larger padding for a more prominent button */
+  margin: 15px 0; /* Margin above and below the button */
+  background-color: #255f62; /* Bright blue for contrast */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px; /* Slightly rounded corners for a modern look */
+  transition: background 0.3s ease;
+  font-family: 'Open Sans', sans-serif; /* Consistent font for the button */
+}
+
+.back-button:hover {
+  background: #0a0644; /* Darker shade for hover effect */
+}
+
+.report-controls {
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Specific containers for each chart to control layout individually */
+.pie-chart-container,
+.bar-chart-container {
+    width: 100%;
+    max-width: 600px; /* Adjust width as necessary */
+    margin: 20px auto; /* Centers the chart with margin on top and bottom */
+}
+
+/* Ensure charts do not overflow their container */
+canvas {
+    max-width: 100%;
+    height: auto !important; /* Override height property to maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .pie-chart-container,
+  .bar-chart-container {
+      max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+/* Style for closing the popup */
+.close-btn {
+  float: right;
+  cursor: pointer;
+}
+
+/* Optional: Add some animation to the popup */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.popup {
+  animation: fadeIn 0.5s;
+}

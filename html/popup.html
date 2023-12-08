@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/popup.css">
+</head>
+<body>
+    <div class="login-box">
+        <h2>Set Reminder</h2>
+        <form>
+            <div class="user-box">
+                <input type="number" id="hoursInput" required="">
+                <label>Hours</label>
+            </div>
+            <div class="user-box">
+                <input type="number" id="minutesInput" required="">
+                <label>Minutes</label>
+            </div>
+            <!-- <div class="user-box">
+                <input type="number" id="secondsInput" required="">
+                <label>Seconds</label>
+            </div> -->
+            <div class="button-container">
+                <a href="#" id="setTime">Set</a>
+                <a href="#" id="updateTime">Update</a>
+                <a href="#" id="generateReport">Generate Report</a>
+            </div>
+        </form>
+        <span id="confirmation">Reminder Set!</span>
+    </div>
+    <script src="/js/popup.js"></script>
+</body>
+</html>
